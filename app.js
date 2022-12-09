@@ -27,7 +27,8 @@ velo.prototype = Object.create(vehicule.prototype);
 velo.prototype.constructor = velo
 
 
-let voiture = function (assurance, proprietaire) {
+let voiture = function (couleur, roues, marques, assurance, proprietaire) {
+    vehicule.call(this, couleur, roues, marques);
     this.assurance = "Macif";
     this.proprietaire = "Damien";
 
@@ -36,6 +37,10 @@ let voiture = function (assurance, proprietaire) {
     }
 }
 
-voiture.prototype = ob
+voiture.prototype = Object.create(vehicule.prototype);
+voiture.prototype.constructor = voiture
+
+
 console.log(vehicule)
 console.log(velo)
+console.log(voiture)
